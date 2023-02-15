@@ -1,0 +1,33 @@
+{
+  "name": "tekkieblog",
+  "version": "1.0.0",
+  "description": "Content Management System (CMS)-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
+  },
+  "keywords": [],
+  "author": "MaSandra Ewing",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mewing0328/TekkieBlog.git",
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.28.0",
+    "dotenv": "^16.0.3",
+    "bcrypt": "^5.1.0",
+    "express-session": "^1.17.3",
+    "connect-session-sequelize": "^7.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^2.8.4",
+    "prettier": "^2.1.2"
+  }
+}
