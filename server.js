@@ -43,5 +43,5 @@ app.use(routes);
 
 // SWITCH BELOW FROM TRUE TO FALSE AFTER DROPPING & CREATING TABLES
 sequelize.sync({ force: false }).then(() => { // force TRUE: true adds a DROP TABLE IF EXISTS before trying to CREATE table (existing tables will be overwritten)
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log(`Now listening in port ${PORT}`));
 });
