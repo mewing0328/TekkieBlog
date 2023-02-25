@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Blog, User, Comment } = require('../../models'); // require all 3 models so you can see comments w/user info
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {

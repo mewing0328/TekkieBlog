@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models'); // require the models
+const { Blog, User, Comment } = require('../models'); // require the models
 const withAuth = require('../utils/auth'); // middleware checking sign in credentials
 
 // READ the homepage and obtain all blogs associated with the User that is signed in
@@ -12,6 +12,16 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment, 
+          attributes: ['id', 'context', 'date_created', 'blog_id', 'user_id'],
+            include: [
+              {
+                model: User,
+                attributes: ['name']
+              }
+            ]
+        }
       ],
     });
 
@@ -36,6 +46,16 @@ router.get('/blog/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment, 
+          attributes: ['id', 'context', 'date_created', 'user_id'],
+            include: [
+              {
+                model: User,
+                attributes: ['name']
+              }
+            ]
+        }
       ],
     });
 

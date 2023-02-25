@@ -1,8 +1,8 @@
 [
     {
-      "comment_text": "Testing.",
+      "context": "Testing.",
       "user_id": 1,
-      "post_id": 1
+      "blog_id": 1
     }
 ]
   
