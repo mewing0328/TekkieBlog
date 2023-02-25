@@ -17,7 +17,7 @@ const hbs = exphbs.create({ helpers }); // method that tells express-handlebars 
 const sess = {
   secret: 'Super secret secret',
   cookie: { // A cookie is information saved by your web browser. When you visit a website, the site may place a cookie on your web browser so it can recognize your device in the future. If you return to that site later on, it can read that cookie to remember you from your last visit and keep track of you over time
-    maxAge: 300000, // as milliseconds - this is 5 minutes before the cookie expires
+    maxAge: 1200000, // as milliseconds - this is 300,000 is 5 minutes before the cookie expires
     httpOnly: true, // a tag added to a browser cookie that prevents client-side scripts from accessing data. It provides a gate that prevents the specialized cookie from being accessed by anything other than the server.
     secure: false, //When a secure flag is used, then the cookie will only be sent over HTTPS, which is HTTP over SSL/TLS.
     sameSite: 'strict', // Strict sameSite setting: Cookies will only be sent in a first-party context and not be sent along with requests initiated by third party websites.

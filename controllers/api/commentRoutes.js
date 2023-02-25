@@ -1,47 +1,8 @@
 const router = require('express').Router();
-const { Comment, User, Blog } = require('../../models');
+const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-
-// READ the blog page and obtain all comments associated with that Blog displayed
-router.get('/blog', async (req, res) => {
-    try {
-      // Get all comments and JOIN with blog data
-      const commentData = await Blog.findAll({
-        attributes: ['id', 'context', 'date_created', 'blog_id', 'user_id'],
-  
-        include: [
-          {
-            model: User,
-            attributes: ['name'],
-          },
-          {
-            model: Comment, 
-            attributes: ['id', 'context', 'date_created', 'blog_id', 'user_id'],
-              include: [
-                {
-                  model: User,
-                  attributes: ['name']
-                }
-              ]
-          }
-        ],
-      });
-  
-      // Serialize data so the template can read it
-      const comments = commentData.map((comment) => comment.get({ plain: true }));
-  
-      // Pass serialized data and session flag into template
-      res.render('blogs', { 
-        comments, 
-        logged_in: req.session.logged_in 
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-
-  
-router.post('/blog', withAuth, async (req, res) => {
+ 
+router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...req.body,
