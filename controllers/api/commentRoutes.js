@@ -7,7 +7,6 @@ router.post('/', withAuth, async (req, res) => {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
-      blog_id: req.session.blog_id,
     });
 
     res.status(200).json(newComment);
@@ -34,5 +33,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// ADD A PUT
 
 module.exports = router;
