@@ -23,36 +23,28 @@ const newCommentHandler = async (event) => {
     }
 };
 
-
-
-
-// // For the PUT
-// document
-// .querySelector('.edit-blog-form')
-// .addEventListener('edit', newFormHandler);
-
-// // DELETE A COMMENT - NEED TP MOVE TO ANOTHER JS FILE
-
-// const delButtonHandler = async (event) => {
-//     if (event.target.hasAttribute('data-id')) {
-//       const id = event.target.getAttribute('data-id');
-  
-//       const response = await fetch(`/api/comments/${id}`, {
-//         method: 'DELETE',
-//       });
-  
-//       if (response.ok) {
-//         document.location.replace(`/blog/${blog_id}`);
-//       } else {
-//         alert('Failed to delete comment!');
-//       }
-//     }
-//   };
-
 document
 .querySelector('.new-comment-form')
 .addEventListener('submit', newCommentHandler);
 
-// document
-// .querySelector('#delete')
-// .addEventListener('click', delButtonHandler);
+const delButtonHandler = async (event) => {
+    event.preventDefault();
+
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/comments/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        alert('Unable to delete!');
+      }
+    }
+  };
+
+document
+.querySelector('.delete-comment')
+.addEventListener('click', delButtonHandler);
