@@ -17,9 +17,7 @@ Content Management System (CMS)-style blog site similar to a Wordpress site, whe
 
 [6. License](#license)
 
-[7. Screenshots](#screenshots)
-
-[8. Credits](#credits)
+[7. Credits](#credits)
 
 ## Installation 
 The application has dependencies (see package.json file). Before using the application, install npm modules.
@@ -80,7 +78,7 @@ TO DO - Edit requirments below:
 ```
 
 ## Links
-[Link for Deployed Application](x) 
+[Link for Deployed Application](https://tekkieblog.herokuapp.com/) 
 
 ## Contributing 
 Contributions are welcomed for future versions with features such as additional enhancements.
@@ -102,19 +100,6 @@ The application is covered by MIT license.
 
  [![MIT}](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
- ## Screenshots 
-
-1. Viewing the homepage
-
-    <img src="./assets/createDb.png" style="width:30rem">
-
-2. Signing in 
-
-    <img src="./assets/seedStart.png" style="width:30rem">
-
-3. Updating blog posts
-
-    <img src="./assets/createCat.png" style="width:30rem">
 
 ## Credits
 Credit for tutorials and guides I utilized in my code

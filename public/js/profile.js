@@ -20,8 +20,15 @@ const newFormHandler = async (event) => {
       }
     }
   };
+
+  document
+  .querySelector('.new-blog-form')
+  .addEventListener('submit', newFormHandler);
+
   
   const delButtonHandler = async (event) => {
+    event.preventDefault();
+
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
@@ -37,11 +44,7 @@ const newFormHandler = async (event) => {
     }
   };
   
-  document
-    .querySelector('.new-blog-form')
-    .addEventListener('submit', newFormHandler);
-  
-  document
-    .querySelector('.blog-list')
-    .addEventListener('click', delButtonHandler);
+  document.querySelector('.blog-list').addEventListener('click', delButtonHandler);
+
+
   

@@ -1,12 +1,12 @@
-<div class="row mt-4">
-  <div class="col-md-6">
+<div>
+  <div>
     <h2>{{name}}</h2>
     <p>{{description}}</p>
     <p>Created by {{user.name}} on {{format_date date_created}}</p>
-
+    {{> editBlog}}
     <!-- conditionally render the comment button if logged in -->
     {{#if logged_in}}
-    <div class="col-md-6">
+    <div>
         <h3>Comment:</h3>
 
         <form class="form new-comment-form">
@@ -18,32 +18,15 @@
             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
           </div>
         </form>
-
-      </div>
-    {{/if}}
-    
-  </div>
-
-  {{#if comments.length}}
-    <div class="col-md-6 blog-list">
-    <h3>Current Comments:</h3>
-
-    {{#each comments as |comment| }}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/comment/{{comment.id}}">{{comment.context}}</a></h4>
-        <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
-      </div>
-
-          <div class="col-md-4">
-            <button class="delete-comment btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
-          </div>
-
     </div>
-    {{/each}}
+    {{else}}
+    <button class="login-btn btn btn-sm btn-primary"><a href="/login">Log In</a></button>
+    {{/if}}
   </div>
-  {{/if}}
-
 </div>
 
+
+{{> editcomment}}
+
 <script src="/js/comment.js"></script>
+<script src="/js/editBlog.js"></script>

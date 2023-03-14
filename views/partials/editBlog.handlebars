@@ -1,0 +1,17 @@
+{{!-- Edit Post form --}}
+<div id="blogEditCard" class="card" style="display: none;">
+    <div class="edit-comment-form card-body" style="display: block;">
+        <h3 class="card-header"> Edit {{comment.owner.username}}'s Comment</h3>
+        <form class="edit-comment-form">
+            <div class="input-box">
+                <input id="editcomment-text" name="comment.text" type="text" value="{{text}}"
+                    class="form-input" required>
+                <label for="comment.text" class="form-label">{{text}}</label>
+            </div>
+        </form>
+        <button id="submitEditComment-btn" class="btn mt-3" type="submit" data-id="{{comment.id}}">
+            Submit Change to My Comment
+        </button>
+        <br> <br>
+    </div>
+</div>

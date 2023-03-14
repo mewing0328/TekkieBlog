@@ -1,0 +1,14 @@
+{{#if comments.length}}
+    <div class="col-md-6 comment-list">
+        {{#each comments as |comment| }}
+            <div class="row mb-2">
+                <div class="col-md-8">
+                    <h4>{{comment.context}}</a></h4>
+                    <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+    <h2 class="text-center">No comments</h2>
+    </div>
+{{/if}}
