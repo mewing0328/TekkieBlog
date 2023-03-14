@@ -25,43 +25,43 @@ const newCommentHandler = async (event) => {
 };
 document.querySelector('.new-comment-form').addEventListener('submit', newCommentHandler);
 
-// EDIT A COMMENT
-// User clicks on edit comment button IF user OWNs the comment - see handlebar for {{if ownsComment}}
-function editComment() {
-  document.querySelector('.commentEditCard').style.display = 'block';
-}
+// // EDIT A COMMENT
+// // User clicks on edit comment button IF user OWNs the comment - see handlebar for {{if ownsComment}}
+// function editComment() {
+//   document.querySelector('.commentEditCard').style.display = 'block';
+// }
 
-// PUT for DB
-const editCommentFormHandler = async (event) => {
-  event.preventDefault();
+// // PUT for DB
+// const editCommentFormHandler = async (event) => {
+//   event.preventDefault();
 
-  console.log('EDIT FUNCTION');
+//   console.log('EDIT FUNCTION');
 
-  if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+//   if (event.target.hasAttribute('data-id')) {
+//       const id = event.target.getAttribute('data-id');
 
-  console.log(id);
+//   console.log(id);
 
-  const context = document.querySelector('#editcomment-text').value.trim();
+//   const context = document.querySelector('#editcomment-text').value.trim();
 
-      const response = await fetch(`/api/comments/${id}`, {
-          method: 'PUT',
-          body: JSON.stringify({ context }),
-          headers: { 'Content-Type': 'application/json' },
-      });
+//       const response = await fetch(`/api/comments/${id}`, {
+//           method: 'PUT',
+//           body: JSON.stringify({ context }),
+//           headers: { 'Content-Type': 'application/json' },
+//       });
 
-      // IF response is successful, then reload
-      if (response.ok) {
-          document.location.reload();
-      } else {
-          console.log(response.statusText);
-      }
+//       // IF response is successful, then reload
+//       if (response.ok) {
+//           document.location.reload();
+//       } else {
+//           console.log(response.statusText);
+//       }
 
-  };
-};
-document.querySelector('#submitEditComment-btn').addEventListener('click', (event) => {
-  editCommentFormHandler(event);
-});
+//   };
+// };
+// document.querySelector('#submitEditComment-btn').addEventListener('click', (event) => {
+//   editCommentFormHandler(event);
+// });
 
 // // DELETE a COMMENT
 // const delCommentButtonHandler = async (event) => {
